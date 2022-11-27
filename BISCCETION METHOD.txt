@@ -1,0 +1,96 @@
+// BISECTION METHOD 
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+	float x[100], a, b, r, root;
+	int i;
+	printf("Enter the value of a: ");
+	scanf("%f",&a);
+	printf("Enter the value of b: ");
+	scanf("%f",&b);
+	
+	i=0;
+	do{
+		printf("Iteration %d: \n",i);
+		x[i] = (a+b)/2;
+		printf("Mean: %f\n",x[i]);
+		r = pow(x[i],3) - (3*x[i]) + 1;
+		printf("value of f(x) = %f\n",r);
+		
+		if(r<0){
+			b = x[i];
+		}
+		else{
+			a = x[i];
+		}
+		i++;
+		printf("a = %f\t",a);
+		printf("b = %f\n",b);
+		root = (a+b)/2;
+		printf("\n\n");
+	} while(a-b > 0.001);
+	
+	printf("The Root is: %f",root);
+}
+
+
+TABLE CHECK:
+
+Enter the value of a: 2
+Enter the value of b: 1.5
+Iteration 0: 
+Mean: 1.750000
+value of f(x) = 1.109375
+a = 1.750000	b = 1.500000
+
+
+Iteration 1: 
+Mean: 1.625000
+value of f(x) = 0.416016
+a = 1.625000	b = 1.500000
+
+
+Iteration 2: 
+Mean: 1.562500
+value of f(x) = 0.127197
+a = 1.562500	b = 1.500000
+
+
+Iteration 3: 
+Mean: 1.531250
+value of f(x) = -0.003387
+a = 1.562500	b = 1.531250
+
+
+Iteration 4: 
+Mean: 1.546875
+value of f(x) = 0.060772
+a = 1.546875	b = 1.531250
+
+
+Iteration 5: 
+Mean: 1.539062
+value of f(x) = 0.028410
+a = 1.539062	b = 1.531250
+
+
+Iteration 6: 
+Mean: 1.535156
+value of f(x) = 0.012441
+a = 1.535156	b = 1.531250
+
+
+Iteration 7: 
+Mean: 1.533203
+value of f(x) = 0.004509
+a = 1.533203	b = 1.531250
+
+
+Iteration 8: 
+Mean: 1.532227
+value of f(x) = 0.000557
+a = 1.532227	b = 1.531250
+
+
+The Root is: 1.531738
